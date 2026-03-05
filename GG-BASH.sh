@@ -263,7 +263,7 @@ function passwordPlayerOneValidation
   do
     read -sp "$name1 enter your password (it cannot start with 0):" pass1
         echo -e "\n"
-      if [[ ! "$pass1" =~ ^[0-9]+$ ]]; then
+      if [[ ! "$pass1" =~ ^[1-9]+$ ]]; then
         echo -e "\t invalid input plz enter a number bet [1000,9999]\n"
         continue
         fi
@@ -290,7 +290,7 @@ function passwordPlayerTwoValidation
 
     read -sp "$name2 enter your password (it cannot start with 0): " pass2
         echo -e "\n"
-         if [[ ! "$pass2" =~ ^[0-9]+$ ]]; then
+         if [[ ! "$pass2" =~ ^[1-9]+$ ]]; then
         echo -e "\t invalid input plz enter a number bet [1000,9999]"
         continue
         fi
@@ -322,7 +322,7 @@ function passwordGamePlay
               echo  "--$name1 Guess $name2's password  "
               read guesspass1
 
-               if [[ ! "$guesspass1" =~ ^[0-9]+$ ]]; then
+               if [[ ! "$guesspass1" =~ ^[1-9]+$ ]]; then
                   echo -e "\t invalid input plz enter a number bet [1000,9999]\n"
                   continue
                fi
@@ -364,7 +364,7 @@ function passwordGamePlay
         echo  "--$name2 Guess $name1's password "
           read guesspass2
 
-              if [[ ! "$guesspass2" =~ ^[0-9]+$ ]]; then
+              if [[ ! "$guesspass2" =~ ^[1cd-9]+$ ]]; then
                   echo -e "\t invalid input plz enter a number bet [1000,9999]"
                   continue
                fi
