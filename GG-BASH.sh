@@ -263,10 +263,11 @@ function passwordPlayerOneValidation
   do
     read -sp "$name1 enter your password (it cannot start with 0):" pass1
         echo -e "\n"
-      if [[ ! "$pass1" =~ ^[1-9]+$ ]]; then
+      if [[ ! "$pass1" =~ ^[0-9]+$ ]]; then
         echo -e "\t invalid input plz enter a number bet [1000,9999]\n"
         continue
         fi
+
 
       if [[ $pass1 -lt $minPassLimit ]]
             then
@@ -290,7 +291,7 @@ function passwordPlayerTwoValidation
 
     read -sp "$name2 enter your password (it cannot start with 0): " pass2
         echo -e "\n"
-         if [[ ! "$pass2" =~ ^[1-9]+$ ]]; then
+         if [[ ! "$pass2" =~ ^[0-9]+$ ]]; then
         echo -e "\t invalid input plz enter a number bet [1000,9999]"
         continue
         fi
@@ -322,7 +323,7 @@ function passwordGamePlay
               echo  "--$name1 Guess $name2's password  "
               read guesspass1
 
-               if [[ ! "$guesspass1" =~ ^[1-9]+$ ]]; then
+               if [[ ! "$guesspass1" =~ ^[0-9]+$ ]]; then
                   echo -e "\t invalid input plz enter a number bet [1000,9999]\n"
                   continue
                fi
@@ -364,7 +365,7 @@ function passwordGamePlay
         echo  "--$name2 Guess $name1's password "
           read guesspass2
 
-              if [[ ! "$guesspass2" =~ ^[1cd-9]+$ ]]; then
+              if [[ ! "$guesspass2" =~ ^[0-9]+$ ]]; then
                   echo -e "\t invalid input plz enter a number bet [1000,9999]"
                   continue
                fi
@@ -436,12 +437,12 @@ do
 echo -e "Enter a number from 1 to $numOfStrings to pick a word to Guess \n"
 read chosenWord
 
-  if [[ ! "$chosenWord" =~ ^[1-9]+$ ]]; then
+  if [[ ! "$chosenWord" =~ ^[0-9]+$ ]]; then
      echo -e "\t invalid input plz enter a valid number\n"
      continue
   fi
 
-if [[ $chosenWord -ge $numOfStrings ]]
+if [[ $chosenWord -gt $numOfStrings ]]
 then
 echo -e "Invalid choice enter a valid one \n"
 elif [[ $chosenWord -le 0 ]]
@@ -541,11 +542,14 @@ function commandreversefn
     echo "enter a number from 1 to $numOfcommands"
     read numPicked
 
-     if [[ ! "$numPicked" =~ ^[1-9]+$ ]]; then
+     if [[ ! "$numPicked" =~ ^[0-9]+$ ]]; then
      echo -e "\t invalid input plz enter a valid number\n"
      continue
   fi
-
+    if [[  $numPicked -eq 0 ]]; then
+     echo -e "\t invalid input plz enter a valid number\n"
+     continue
+      fi
     if [[ $numPicked -le $numOfcommands ]]
   then
     ((numPicked--))
@@ -601,10 +605,16 @@ while true;
     echo "enter a number from 1 to $numOfDistro"
     read numPicked
 
-    if [[ ! "$numPicked" =~ ^[1-9]+$ ]]; then
+    if [[ ! "$numPicked" =~ ^[0-9]+$ ]]; then
      echo -e "\t invalid input plz enter a vaild number\n"
      continue
   fi
+  if [[  $numPicked -eq 0 ]]; then
+     echo -e "\t invalid input plz enter a valid number\n"
+     continue
+  fi
+
+
     if [[ $numPicked -le $numOfDistro ]]
   then
     ((numPicked--))
