@@ -55,4 +55,46 @@ Guess the correct word from a reversed version.
 - Displays remaining guesses.
 - Shows correct answer with description upon win or loss.
 
+-----
+# 🐧 Guess Distro Game
+
+A simple Bash-based GUI quiz game that helps users learn and recognize different Linux distributions through images and descriptions.
+
 ---
+
+
+
+This project is an interactive guessing game built using **Bash + Zenity**.  
+It randomly displays an image of a Linux distribution and asks the user to guess which distro it is from multiple choices.
+
+If the user answers correctly, they earn a point and see a short description of the distro.
+
+---
+
+## Features
+
+- Random Linux distro image display
+- Multiple-choice guessing system
+- Score tracking during gameplay
+- Instant feedback (correct / wrong)
+- Educational descriptions of each distro
+- GUI-based interface using Zenity
+
+---
+
+## Supported Linux Distributions
+
+- Fedora
+- Arch
+- Linux Mint
+- Kali Linux
+- openSUSE
+- Debian
+- EndeavourOS
+- Ubuntu
+- Pop!_OS
+- Red Hat Enterprise Linux
+
+---
+
+
